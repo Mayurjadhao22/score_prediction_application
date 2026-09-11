@@ -1,11 +1,13 @@
+mport os
 import pickle
 import numpy as np
 from flask import Flask, jsonify, render_template, request
 
-app = Flask(__name__)
+app = Flask(_name_)
 
-# Load the pretrained SVR model from disk
-MODEL_PATH = "model.pkl"
+# Load model
+BASE_DIR = os.path.dirname(os.path.abspath(_file_))
+MODEL_PATH = os.path.join(BASE_DIR, "model.pkl")
 
 try:
     with open(MODEL_PATH, "rb") as f:
